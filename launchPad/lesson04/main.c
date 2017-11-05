@@ -39,8 +39,20 @@
   ~ 0x00000008 gives GREEN
 */
 
+void myDelay(int interval)
+{
+    int i = 0;
+    interval *= 1000;
+    while (i < interval) {
+        ++i;
+    }
+}
+
 int main()
 {
+    /* See datasheet section 10.2.1.2 for details on chosen address */
+    unsigned int *gpio_portF_led = (unsigned int *)0x40025038U;
+    
     /* Enable clock for GPIO Port F (RCGCGPIO bit 5) */
     *((unsigned int *)0x400FE608U) |= 0x00000020U;
     
@@ -52,8 +64,16 @@ int main()
     
     /* Write to correctly masked Port F Data Address (GPIODATA) */
     /* We don't need `|=` because the optimized address masking architecture */
+    *gpio_portF_led = 0x00000000U;/* Initialize the LEDS to be off */
+   
     while (1) {
-        *((unsigned int *)0x40025038U) = 0x0000000AU;
+        *gpio_portF_led += 0x2U;
+        
+        if (*gpio_portF_led > 0xE) {
+            *gpio_portF_led += 0x00000000U;
+        }
+          
+        myDelay(1000);
     }
     
     return 0;
