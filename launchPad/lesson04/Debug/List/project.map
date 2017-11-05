@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.20.1.14183/W32 for ARM                04/Nov/2017  20:52:00
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                05/Nov/2017  09:44:58
 # Copyright 2007-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        C:\Users\cmgrass\learnC\launchPad\lesson04\Debug\List\project.map
 #    Command line =  
-#        -f C:\Users\cmgrass\AppData\Local\Temp\EWA0DC.tmp
+#        -f C:\Users\cmgrass\AppData\Local\Temp\EW33E3.tmp
 #        (C:\Users\cmgrass\learnC\launchPad\lesson04\Debug\Obj\main.o -o
 #        C:\Users\cmgrass\learnC\launchPad\lesson04\Debug\Exe\project.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
@@ -60,17 +60,17 @@ No sections matched the following patterns:
   .intvec   ro code  0x00000000    0x40  vector_table_M.o [5]
                    - 0x00000040    0x40
 
-"P1":                              0xb4
-  .text     ro code  0x00000040    0x3c  main.o [1]
-  .text     ro code  0x0000007c    0x22  fpinit_M.o [4]
-  .text     ro code  0x0000009e     0x2  vector_table_M.o [5]
-  .text     ro code  0x000000a0    0x1e  cmain.o [5]
-  .text     ro code  0x000000be     0x4  low_level_init.o [3]
-  .text     ro code  0x000000c2     0x4  exit.o [3]
-  .text     ro code  0x000000c8     0xa  cexit.o [5]
-  .text     ro code  0x000000d4    0x14  exit.o [6]
-  .text     ro code  0x000000e8     0xc  cstartup_M.o [5]
-                   - 0x000000f4    0xb4
+"P1":                              0xe0
+  .text     ro code  0x00000040    0x68  main.o [1]
+  .text     ro code  0x000000a8    0x22  fpinit_M.o [4]
+  .text     ro code  0x000000ca     0x2  vector_table_M.o [5]
+  .text     ro code  0x000000cc    0x1e  cmain.o [5]
+  .text     ro code  0x000000ea     0x4  low_level_init.o [3]
+  .text     ro code  0x000000ee     0x4  exit.o [3]
+  .text     ro code  0x000000f4     0xa  cexit.o [5]
+  .text     ro code  0x00000100    0x14  exit.o [6]
+  .text     ro code  0x00000114     0xc  cstartup_M.o [5]
+                   - 0x00000120    0xe0
 
 "P2":                            0x1000
   CSTACK             0x20000000  0x1000  <Block>
@@ -86,9 +86,9 @@ No sections matched the following patterns:
     Module            ro code  rw data
     ------            -------  -------
 C:\Users\cmgrass\learnC\launchPad\lesson04\Debug\Obj: [1]
-    main.o                 60
+    main.o                104
     ----------------------------------
-    Total:                 60
+    Total:                104
 
 command line: [2]
     ----------------------------------
@@ -121,7 +121,7 @@ shb_l.a: [6]
     Gaps                    4
     Linker created               4 096
 --------------------------------------
-    Grand Total:          244    4 096
+    Grand Total:          288    4 096
 
 
 *******************************************************************************
@@ -130,24 +130,25 @@ shb_l.a: [6]
 
 Entry                      Address  Size  Type      Object
 -----                      -------  ----  ----      ------
-?main                   0x000000a1        Code  Gb  cmain.o [5]
+?main                   0x000000cd        Code  Gb  cmain.o [5]
 CSTACK$$Base            0x20000000         --   Gb  - Linker created -
 CSTACK$$Limit           0x20001000         --   Gb  - Linker created -
 Region$$Table$$Base     0x00000000         --   Gb  - Linker created -
 Region$$Table$$Limit    0x00000000         --   Gb  - Linker created -
-__cmain                 0x000000a1        Code  Gb  cmain.o [5]
-__exit                  0x000000d5  0x14  Code  Gb  exit.o [6]
-__iar_init_vfp          0x0000007d        Code  Gb  fpinit_M.o [4]
-__iar_program_start     0x000000e9        Code  Gb  cstartup_M.o [5]
+__cmain                 0x000000cd        Code  Gb  cmain.o [5]
+__exit                  0x00000101  0x14  Code  Gb  exit.o [6]
+__iar_init_vfp          0x000000a9        Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x00000115        Code  Gb  cstartup_M.o [5]
 __iar_systems$$module {Abs}
                         0x00000001        Data  Gb  command line/config [2]
-__low_level_init        0x000000bf   0x4  Code  Gb  low_level_init.o [3]
+__low_level_init        0x000000eb   0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x00000000        Data  Gb  vector_table_M.o [5]
-_call_main              0x000000ad        Code  Gb  cmain.o [5]
-_exit                   0x000000c9        Code  Gb  cexit.o [5]
-_main                   0x000000bb        Code  Gb  cmain.o [5]
-exit                    0x000000c3   0x4  Code  Gb  exit.o [3]
-main                    0x00000041  0x3c  Code  Gb  main.o [1]
+_call_main              0x000000d9        Code  Gb  cmain.o [5]
+_exit                   0x000000f5        Code  Gb  cexit.o [5]
+_main                   0x000000e7        Code  Gb  cmain.o [5]
+exit                    0x000000ef   0x4  Code  Gb  exit.o [3]
+main                    0x00000053  0x46  Code  Gb  main.o [1]
+myDelay                 0x00000041  0x12  Code  Gb  main.o [1]
 
 
 [1] = C:\Users\cmgrass\learnC\launchPad\lesson04\Debug\Obj
@@ -157,7 +158,7 @@ main                    0x00000041  0x3c  Code  Gb  main.o [1]
 [5] = rt7M_tl.a
 [6] = shb_l.a
 
-    244 bytes of readonly  code memory
+    288 bytes of readonly  code memory
   4 096 bytes of readwrite data memory
 
 Errors: none
