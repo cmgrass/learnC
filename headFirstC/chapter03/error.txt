@@ -1,1 +1,0 @@
-ERROR - Invalid latitude: 441.567902
