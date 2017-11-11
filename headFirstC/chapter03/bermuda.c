@@ -4,7 +4,7 @@
   NOTE: You can run this with `geo2json` with the following command:
   `(./bermuda | ./geo2json) < gpsdata.csv > output.json`
   The command connects the two tools with a "pipe" `|`.
-  This "pipe" pipse Standard Output from `bermuda` to Standard Input of `geo..`
+  This "pipe" pipes Standard Output from `bermuda` to Standard Input of `geo..`
 */
 
 

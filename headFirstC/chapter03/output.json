@@ -1,9 +1,0 @@
-data=[
-{latitude: 27.567890, longitude: -75.768509, info: 'speed = 12'},
-{latitude: 28.545691, longitude: -75.768509, info: 'speed = 13'},
-{latitude: 29.567890, longitude: -74.768509, info: 'speed = 13'},
-{latitude: 30.567890, longitude: -74.768509, info: 'speed = 13'},
-{latitude: 31.567890, longitude: -73.768509, info: 'speed = 13'},
-{latitude: 32.567188, longitude: -72.768509, info: 'speed = 13'},
-{latitude: 33.567890, longitude: -71.768509, info: 'speed = 12'}
-]
