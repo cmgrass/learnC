@@ -1,13 +1,10 @@
 CFLAGS=-Wall -g
 
-program_message_hider: clean_message_hider
-	gcc message_hider.c encrypt.c -o message_hider
+encrypt.o: encrypt.h encrypt.c
+	gcc -c encrypt.c
 
-program_dataFileHider: clean_dataFileHider
-	gcc dataFileHider.c encrypt.c -o dataFileHider
+dataFileHider.o: dataFileHider.c encrypt.h
+	gcc -c dataFileHider.c
 
-clean_message_hider:
-	rm -rf message_hider
-
-clean_dataFileHider:
-	rm -rf dataFileHider
+dataFileHider: encrypt.o dataFileHider.o
+	gcc encrypt.o dataFileHider.o -o dataFileHider
