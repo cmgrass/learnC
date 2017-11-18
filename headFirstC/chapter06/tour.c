@@ -46,5 +46,7 @@ int main()
 
     print_schedule_info(&amity);
 
+    printf("Size of 'island' structure: %lu bytes.\n", sizeof(island));
+
     return 0;
 }
