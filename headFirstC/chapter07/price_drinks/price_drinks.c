@@ -33,6 +33,8 @@ double total(int num_drinks, ...)
        current_price += price(va_arg(arg_list, enum drink));
     }
     
+    va_end(arg_list);
+    
     return current_price;
 }
 
