@@ -1,5 +1,5 @@
-hfcal.o: hfcal.c
-	gcc -Wall -g -I../includes -fPIC -c hfcal.c -o hfcal.o
+hfcal.o: hfcal_uk.c
+	gcc -Wall -g -I../includes -fPIC -c hfcal_uk.c -o hfcal.o
 
 libhfcal.a: hfcal.o
 	ar -rcs ./libhfcal.a hfcal.o
