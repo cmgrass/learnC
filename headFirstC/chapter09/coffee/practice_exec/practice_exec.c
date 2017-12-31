@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
 
-void print_err()
+void print_err(char *msg)
 {
-  fprintf(stderr, "Can't run python program: %d, %s\n", errno,
+  fprintf(stderr, "%s: %d, %s\n", msg, errno,
           strerror(errno));
+  exit(1);
 }
 
 int main(int argc, char *argv[])
@@ -20,13 +22,11 @@ int main(int argc, char *argv[])
     /* child active */
     if (execl("/usr/bin/python", "/usr/bin/python",
         "./test.py", NULL) == -1) {
-      print_err();
-      return 1;
+      print_err("Can't run python program");
     }
   } else if (pid == -1) {
     /* error */
-    print_err();
-    return 1;
+    print_err("Can't fork the parent process");
   } else {
     /* parent active */
   }
@@ -35,8 +35,7 @@ int main(int argc, char *argv[])
 
   if (execl("/usr/bin/python", "/usr/bin/python",
       "../../../../../learnPython/ex43/gameMain.py", NULL) == -1) {
-    print_err();
-    return 1;
+    print_err("Can't run the python process");
   }
 
   puts("We did it!");
